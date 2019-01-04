@@ -1,0 +1,11 @@
+{
+    "pin_mapping": {
+        "thinking": [FILL_ME],
+        "lamp": [FILL_ME]
+    },
+    "location_coords": {
+        "x": "37.232191",
+        "y": "-80.423165"
+    },
+    "logfile": "crest.log"
+}

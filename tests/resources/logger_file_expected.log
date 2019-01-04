@@ -1,0 +1,21 @@
+
+-----------------
+Logger initialized on TIME.
+[INFO : TIME] Ran neat command, output: Played neat.
+[INFO : TIME] Ran why command, output: Played why.
+[INFO : TIME] Ran date command, output: Monday, December 17.
+[INFO : TIME] Ran toggle_lamp command, output: Toggled lamp.
+[WARN : TIME] Command joke threw an exception:
+    This is a stacktrace.
+        This stacktrace has been formatted to test indenting,
+            as each line should be indented another four spaces.
+    Hopefully, this stacktrace looks correct.
+    
+[ERROR: TIME] Command time threw an exception:
+    This is a stacktrace.
+        This stacktrace has been formatted to test indenting,
+            as each line should be indented another four spaces.
+    Hopefully, this stacktrace looks correct.
+    
+Logger closed on TIME, ran 4 commands.
+-----------------

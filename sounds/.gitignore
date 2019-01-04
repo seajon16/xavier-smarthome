@@ -1,0 +1,8 @@
+# Ignore everything in this directory
+*
+# Except me and the four sample sounds
+!.gitignore
+!akuwhat.mp3
+!neat.mp3
+!thicc.mp3
+!why.mp3
