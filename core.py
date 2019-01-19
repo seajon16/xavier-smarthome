@@ -75,7 +75,7 @@ class Body:
         Note: Control will stay within this object.
         """
         # Grab my callback methods, find the appropriate models, and set up the
-        # 	sensitivities for each
+        #   sensitivities for each
         callbacks = []
         models = []
         sensitivities = []
@@ -95,10 +95,12 @@ class Body:
         # Designate me as a running instance
         self.is_running = True
 
-        detectors.start(detected_callback=callbacks,
-                        # If I should no longer be running, then interrupt me
-                        interrupt_check=lambda: not self.is_running,
-                        sleep_time=.03)
+        detectors.start(
+            detected_callback=callbacks,
+            # If I should no longer be running, then interrupt me
+            interrupt_check=lambda: not self.is_running,
+            sleep_time=.03
+        )
 
         detectors.terminate()
 

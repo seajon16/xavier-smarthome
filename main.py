@@ -3,7 +3,7 @@ from core import Body
 
 
 with open('settings.json') as f:
-	settings = json.load(f)
+    settings = json.load(f)
 
 # Use get for these two since they can be undefined
 location_coords = settings.get('location_coords')
