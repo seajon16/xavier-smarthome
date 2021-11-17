@@ -1,2 +1,4 @@
 # Ignore the settings file, since it varies per installation
 settings.json
+
+__pycache__

@@ -1,8 +1,9 @@
 # Ignore everything in this directory
 *
-# Except me and the four sample sounds
+# Except me, the four sample sounds, and the GTTS connection error message
 !.gitignore
 !akuwhat.mp3
 !neat.mp3
 !thicc.mp3
 !why.mp3
+!gtts_failure.mp3

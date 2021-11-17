@@ -1,7 +1,7 @@
 {
     "pin_mapping": {
-        "thinking": [FILL_ME],
-        "lamp": [FILL_ME]
+        "thinking": 20,
+        "lamp": 21
     },
     "location_coords": {
         "x": "37.232191",

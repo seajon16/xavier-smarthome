@@ -1,6 +1,6 @@
 import unittest
 from brain import Brain
-from enums import WeatherDay
+from util.enums import WeatherDay
 
 
 class TestBrain(unittest.TestCase):
@@ -24,29 +24,29 @@ class TestBrain(unittest.TestCase):
         Therefore, this test ensures common problematic characters are not in
         the output string.
         """
-        _response = self.brain.get_joke()
+        response = self.brain.get_joke()
         # Check for the fancy apostrophe
-        self.assertNotIn('\u2019', _response)
+        self.assertNotIn('\u2019', response)
         # Check for the default unknown character
-        self.assertNotIn('\u00C2', _response)
+        self.assertNotIn('\u00C2', response)
         # Check for another problematic character
-        self.assertNotIn('\u0080', _response)
+        self.assertNotIn('\u0080', response)
         # Check for newlines
-        self.assertNotIn('\n', _response)
+        self.assertNotIn('\n', response)
         # Check for tabs
-        self.assertNotIn('\t', _response)
+        self.assertNotIn('\t', response)
 
     def test_full_broadcast(self):
         """Tests the get_full_broadcast method.
 
         Does this by assuring the bare minimum in a result is present.
         """
-        _response = self.brain.get_full_broadcast(WeatherDay.TODAY)
+        response = self.brain.get_full_broadcast(WeatherDay.TODAY)
         # Added when addressing the time the response refers to
-        self.assertIn(',', _response)
+        self.assertIn(',', response)
         # Added when adding a temperature
-        self.assertIn("it's", _response)
-        self.assertIn('with a temperature of', _response)
+        self.assertIn("it's", response)
+        self.assertIn('with a temperature of', response)
 
 
 if __name__ == '__main__':

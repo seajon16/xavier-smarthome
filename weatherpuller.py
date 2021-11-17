@@ -1,23 +1,32 @@
 import requests
-from datetime import datetime
-import calendar
-from enums import WeatherDay
-import toolbox
+from command import mark_command
 
 
-class Brain:
-    """Core brain that builds all response strings for simple commands.
+class WeatherDay:
+    """Enum to represent different options for weather pulling.
 
-    Handles involved API calls.
+    Weather puller can pull either today's weather or tomorrow's.
+    This Enum represents these options.
+    """
+    TODAY = 1
+    TOMORROW = 2
+
+
+class WeatherPuller:
+    """Uses weather.gov to report the weather.
 
     Args:
-        location_coords (dict): Coordinates used in finding weather with keys
-            x and y. Default location is Blacksburg, VA.
+        xavier (Xavier): Xavier object to use to speak.
+        location_coords (dict, optional): Coordinates used in finding weather with keys
+            x and y. Default location is Blacksburg, VA, defined via the static
+            field default_location_coords.
     """
 
-    def __init__(self, location_coords=None):
-        default_location_coords = {'x': '37.232191', 'y': '-80.423165'}
-        self.location_coords = location_coords or default_location_coords
+    default_location_coords = {'x': '37.232191', 'y': '-80.423165'}
+
+    def __init__(self, xavier, location_coords=None):
+        self.xavier = xavier
+        self.location_coords = location_coords or self.default_location_coords
 
     # Helper #
     def __request_weather(self, day):
@@ -31,10 +40,16 @@ class Brain:
 
         Returns:
             dict: The weather period for the given day.
+
+        Raises:
+            requests.exceptions.ConnectionError: If a connection to the API
+                could not be made. This exception should not cause Xavier to
+                shut down.
         """
         weather_periods = requests.get(
-            'https://api.weather.gov/points/{x},{y}/forecast'
-            .format(**self.location_coords)
+            'https://api.weather.gov/points/{x},{y}/forecast'.format(
+                **self.location_coords
+            )
         ).json()['properties']['periods']
         # If I need today, then I just want the first period
         index = 0
@@ -48,11 +63,12 @@ class Brain:
         return weather_periods[index]
 
     # Response Builders #
-    # Note: These methods return strings to be said by a body
-    def get_full_broadcast(self, day):
+    # Note: These methods return strings to be said by an Xavier object
+    def __get_full_broadcast(self, day):
         """Return a full forecast for a given day as a string.
 
-        Inspired by Dave McKee.
+        Inspired by Dave McKee. API is subject to change and may cause
+        unexpected errors.
 
         Args:
             day (WeatherDay enum): Which day (today or tomorrow) to report.
@@ -78,7 +94,7 @@ class Brain:
             to_say += "it's pretty cold outside"
         else:
             to_say += "it's pretty darn cold"
-        to_say += ' with a temperature of {}!'.format(temperature)
+        to_say += f' with a temperature of {temperature}!'
 
         # Customizes depending on the sky's appearance
         forecast = weather_obj['shortForecast']
@@ -98,7 +114,7 @@ class Brain:
 
         return to_say
 
-    def get_brief_broadcast(self, day):
+    def __get_brief_broadcast(self, day):
         """Return a brief forecast for a given day as a string.
 
         Useful for determining rain chances.
@@ -113,29 +129,42 @@ class Brain:
         weather_obj = self.__request_weather(day)
         return weather_obj['shortForecast']
 
-    @staticmethod
-    def get_time():
-        """Returns a string representing the time."""
-        now = datetime.now()
-        return now.strftime("%I %M with %S seconds.")
+    @mark_command(0.5, requests.exceptions.ConnectionError, sound='thicc')
+    def weather_today_full(self):
+        """Gives today's broadcast.
 
-    @staticmethod
-    def get_date():
-        """Returns a string representing the date."""
-        now = datetime.now()
-        # Find the weekday as a word
-        weekday = calendar.day_name[now.weekday()]
-        # Find the month as a word
-        month = calendar.month_name[now.month]
-        return '{}, {} {}.'.format(weekday, month, now.day)
+        Returns a string holding what was said.
+        """
+        to_say = self.__get_full_broadcast(WeatherDay.TODAY)
+        self.xavier.say(to_say)
+        return to_say
 
-    @staticmethod
-    def get_joke():
-        """Returns a dad joke as a string using https://icanhazdadjoke.com/."""
-        url = 'https://icanhazdadjoke.com/'
-        headers = {'Accept': 'text/plain'}
-        response = requests.get(url, headers=headers)
-        # Replace non-ascii characters, namely odd/malformed apostrophes
-        result = toolbox.repair_response(response.text)
-        # Replace CR, LF, and tab characters with spaces
-        return result.replace('\r\n', ' ').replace('\n', ' ').replace('\t', ' ')
+    @mark_command(0.5, requests.exceptions.ConnectionError, sound='thicc')
+    def weather_tomorrow_full(self):
+        """Gives tomorrow's broadcast.
+
+        Returns a string holding what was said.
+        """
+        to_say = self.__get_full_broadcast(WeatherDay.TOMORROW)
+        self.xavier.say(to_say)
+        return to_say
+
+    @mark_command(0.5, requests.exceptions.ConnectionError, sound='thicc')
+    def weather_today_brief(self):
+        """Gives a brief broadcast for today.
+
+        Returns a string holding what was said.
+        """
+        to_say = self.__get_brief_broadcast(WeatherDay.TODAY)
+        self.xavier.say(to_say)
+        return to_say
+
+    @mark_command(0.5, requests.exceptions.ConnectionError, sound='thicc')
+    def weather_tomorrow_brief(self):
+        """Gives a brief broadcast for tomorrow.
+
+        Returns a string holding what was said.
+        """
+        to_say = self.__get_brief_broadcast(WeatherDay.TOMORROW)
+        self.xavier.say(to_say)
+        return to_say

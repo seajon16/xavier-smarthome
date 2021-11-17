@@ -3,7 +3,7 @@ from unittest.mock import patch
 import re
 import os
 from io import StringIO
-from logger import Logger
+from util.logger import Logger
 
 
 class TestLogger(unittest.TestCase):

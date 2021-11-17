@@ -19,10 +19,10 @@ class Logger:
     lifetime and closes its output stream, if it made one.
 
     Args:
-        filename (str): Name of the file to log to WITH extension. Creates it if
-            it doesn't exist. Appends to it if it already exists. All log files
-            are written to the "logs" directory. Logs to the console if no file
-            is specified.
+        filename (str, optional): Name of the file to log to WITH extension.
+            Creates it if it doesn't exist. Appends to it if it already exists.
+            All log files are written to the "logs" directory. Logs to the
+            console if no file is specified.
     """
 
     def __init__(self, filename=None):

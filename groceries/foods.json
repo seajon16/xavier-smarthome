@@ -1,0 +1,364 @@
+[
+    {
+        "bread": {
+            "aliases": [],
+            "kroger_ucb": {
+                "aisle": 22,
+                "side": "L",
+                "pos": 5
+            }
+        },
+        "provolone": {
+            "aliases": [
+                "sliced provolone"
+            ],
+            "kroger_ucb": {
+                "aisle": 22,
+                "side": "R",
+                "pos": 9
+            }
+        },
+        "sliced cheddar": {
+            "aliases": [],
+            "kroger_ucb": {
+                "aisle": 22,
+                "side": "R",
+                "pos": 9
+            }
+        },
+        "mozzarella": {
+            "aliases": [
+                "shreded mozzarella"
+            ],
+            "kroger_ucb": {
+                "aisle": 22,
+                "side": "R",
+                "pos": 9
+            }
+        },
+        "shredded cheddar": {
+            "aliases": [],
+            "kroger_ucb": {
+                "aisle": 22,
+                "side": "R",
+                "pos": 9
+            }
+        },
+        "feta": {
+            "aliases": [
+                "crumbled feta"
+            ],
+            "kroger_ucb": {
+                "aisle": 22,
+                "side": "R",
+                "pos": 7
+            }
+        },
+        "ham": {
+            "aliases": [
+                "sliced ham"
+            ],
+            "kroger_ucb": {
+                "aisle": 101,
+                "side": "L",
+                "pos": 25,
+                "before": 15
+            }
+        },
+        "bologna": {
+            "aliases": [],
+            "kroger_ucb": {
+                "aisle": 101,
+                "side": "L",
+                "pos": 25,
+                "before": 15
+            }
+        },
+        "turkey": {
+            "aliases": [
+                "sliced turkey"
+            ],
+            "kroger_ucb": {
+                "aisle": 101,
+                "side": "L",
+                "pos": 25,
+                "before": 15
+            }
+        },
+        "air freshener": {
+            "aliases": [
+                "febreze"
+            ],
+            "kroger_ucb": {
+                "aisle": 19,
+                "side": "L",
+                "pos": 3
+            }
+        },
+        "eggs": {
+            "aliases": [],
+            "kroger_ucb": {
+                "aisle": 22,
+                "side": "R",
+                "pos": 5
+            }
+        },
+        "tortillas": {
+            "aliases": [
+                "flour tortillas", "wheat tortillas"
+            ],
+            "kroger_ucb": {
+                "aisle": 7,
+                "side": "L",
+                "pos": 7
+            }
+        },
+        "milk": {
+            "aliases": [
+                "malk", "whole milk", "skim milk"
+            ],
+            "kroger_ucb": {
+                "aisle": 100,
+                "side": "L",
+                "pos": 15,
+                "before": 22
+            }
+        },
+        "blueberry poptarts": {
+            "aliases": [
+                "blueberry poptarts",
+                "frosted blueberry poptarts"
+            ],
+            "kroger_ucb": {
+                "aisle": 10,
+                "side": "R",
+                "pos": 3
+            }
+        },
+        "smores poptarts": {
+            "aliases": [
+                "s'mores poptarts"
+            ],
+            "kroger_ucb": {
+                "aisle": 10,
+                "side": "R",
+                "pos": 3
+            }
+        },
+        "cereal bars": {
+            "aliases": [
+                "nutrigrain bars"
+            ],
+            "kroger_ucb": {
+                "aisle": 10,
+                "side": "R",
+                "pos": 7
+            }
+        },
+        "apple juice": {
+            "aliases": [
+                "aj", "a j"
+            ],
+            "kroger_ucb": {
+                "aisle": 5,
+                "side": "R",
+                "pos": 17
+            }
+        },
+        "qtips": {
+            "aliases": [
+                "q-tips"
+            ],
+            "kroger_ucb": {
+                "aisle": 14,
+                "side": "L",
+                "pos": 23
+            }
+        },
+        "frozen pizza": {
+            "aliases": [
+                "pizza", "pepperoni pizza", "frozen pepperoni pizza"
+            ],
+            "kroger_ucb": {
+                "aisle": 17,
+                "side": "L",
+                "pos": 5
+            }
+        },
+        "doritos": {
+            "aliases": [],
+            "kroger_ucb": {
+                "aisle": 11,
+                "side": "R",
+                "pos": 11
+            }
+        },
+        "bbq chips": {
+            "aliases": [
+                "mesquite bbq chips"
+            ],
+            "kroger_ucb": {
+                "aisle": 11,
+                "side": "R",
+                "pos": 11
+            }
+        },
+        "tortilla chips": {
+            "aliases": [],
+            "kroger_ucb": {
+                "aisle": 11,
+                "side": "R",
+                "pos": 11
+            }
+        },
+        "cookies": {
+            "aliases": [
+                "oreos"
+            ],
+            "kroger_ucb": {
+                "aisle": 11,
+                "side": "L",
+                "pos": 7
+            }
+        },
+        "tissues": {
+            "aliases": [
+                "kleenex", "kleenex tissues", "puffs tissues"
+            ],
+            "kroger_ucb": {
+                "aisle": 21,
+                "side": "R",
+                "pos": 11
+            }
+        },
+        "paper plates": {
+            "aliases": [
+                "plates", "pplates", "p plates"
+            ],
+            "kroger_ucb": {
+                "aisle": 20,
+                "side": "R",
+                "pos": 7
+            }
+        },
+        "paper towels": {
+            "aliases": [
+                "towels", "ptowels", "p towels"
+            ],
+            "kroger_ucb": {
+                "aisle": 21,
+                "side": "L",
+                "pos": 7
+            }
+        },
+        "toilet paper": {
+            "aliases": [
+                "tp", "t paper"
+            ],
+            "kroger_ucb": {
+                "aisle": 21,
+                "side": "R",
+                "pos": 1
+            }
+        },
+        "cleansing cloths": {
+            "aliases": [
+                "butt wipes", "wipes for ya butt", "dude wipes"
+            ],
+            "kroger_ucb": {
+                "aisle": 21,
+                "side": "R",
+                "pos": 1
+            }
+        },
+        "clorox wipes": {
+            "aliases": [
+                "clorox"
+            ],
+            "kroger_ucb": {
+                "aisle": 19,
+                "side": "L",
+                "pos": 5
+            }
+        },
+        "laundry detergent": {
+            "aliases": [
+                "laundry detergent", "tide"
+            ],
+            "kroger_ucb": {
+                "aisle": 18,
+                "side": "R",
+                "pos": 7
+            }
+        },
+        "pasta": {
+            "aliases": [
+                "rotini", "penne", "spaghetti"
+            ],
+            "kroger_ucb": {
+                "aisle": 7,
+                "side": "R",
+                "pos": 5
+            }
+        },
+        "pasta sauce": {
+            "aliases": [
+                "sauce", "tomato sauce", "alfredo sauce"
+            ],
+            "kroger_ucb": {
+                "aisle": 7,
+                "side": "R",
+                "pos": 11
+            }
+        },
+        "macaroni and cheese": {
+            "aliases": [
+                "mac and cheese", "mac n cheese"
+            ],
+            "kroger_ucb": {
+                "aisle": 7,
+                "side": "R",
+                "pos": 13
+            }
+        },
+        "kielbasa": {
+            "aliases": [
+                "sausage"
+            ],
+            "kroger_ucb": {
+                "aisle": 101,
+                "side": "L",
+                "pos": 21,
+                "before": 13
+            }
+        }, 
+        "cereal": {
+            "aliases": [
+                "mini wheats", "frosted mini wheats"
+            ],
+            "kroger_ucb": {
+                "aisle": 10,
+                "side": "L",
+                "pos": 11
+            }
+        },
+        "peanut butter": {
+            "aliases": [],
+            "kroger_ucb": {
+                "aisle": 9,
+                "side": "R",
+                "pos": 9
+            }
+        },
+        "soup": {
+            "aliases": [
+                "chicken noodle soup"
+            ],
+            "kroger_ucb": {
+                "aisle": 6,
+                "side": "R",
+                "pos": 3
+            }
+        }
+    }
+]
