@@ -36,7 +36,6 @@
 # TODO check strings within parenthesis for if you have the parenthesis on new line
 # TODO check what tenses you're using (ie first, third, past, present)
 # TODO should ie be i.e.? yes
-# TODO list(), dict() vs [], {}
 # TODO update readme
 # TODO ensure class names are always capitalized in documentation
 # TODO replace \n +\n with \n\n (ignore .log files)
@@ -117,9 +116,9 @@ class Xavier:
         self.body = Body(pin_mapping)
         self.logger = Logger(logfile)
         # Holds commands added via add_plugin method
-        self.plugins = dict()
+        self.plugins = {}
         # Holds commands added via command decorator
-        self.direct_commands = list()
+        self.direct_commands = []
         # Holds names of commands to prevent adding duplicate commands
         self.command_names = set()
         # Will be used later to determine if my event loop should end
@@ -192,7 +191,7 @@ class Xavier:
 
         These callbacks are wrapped with any necessary plugin objects.
         """
-        mapping = dict()
+        mapping = {}
         # For each plugin (holding HeadedCommands), add its commands to my dict
         for plugin, commands in self.plugins.items():
             for command in commands:
@@ -220,9 +219,9 @@ class Xavier:
 
     def __assemble_snowboy_params(self):
         """Build the callbacks, models, and sensitivities for snowboy."""
-        callbacks = list()
-        models = list()
-        sensitivities = list()
+        callbacks = []
+        models = []
+        sensitivities = []
         # For each plugin (holding HeadedCommands), add its commands to my lists
         for plugin, commands in self.plugins.items():
             for command in commands:
@@ -433,8 +432,8 @@ class Xavier:
         if self.plugins.get(plugin):
             return False
 
-        plugin_commands = list()
-        new_direct_commands = list()
+        plugin_commands = []
+        new_direct_commands = []
 
         members = inspect.getmembers(plugin)
         for _, member in members:
